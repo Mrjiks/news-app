@@ -2,13 +2,11 @@ import React, { useContext } from "react";
 import { StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { AntDesign } from "@expo/vector-icons";
 import { SimpleLineIcons } from "@expo/vector-icons";
-import { Feather } from "@expo/vector-icons";
 import { NewsContext } from "../API/Context";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 const TopNavigation = ({ index, setIndex }) => {
-  const { news, setCategory, setSource, darkTheme, setDarkTheme, fetchNews } =
-    useContext(NewsContext);
+  const { darkTheme, setDarkTheme, fetchNews } = useContext(NewsContext);
   return (
     <View
       style={{
@@ -16,7 +14,7 @@ const TopNavigation = ({ index, setIndex }) => {
         backgroundColor: "#282C35",
       }}>
       {index === 0 ? (
-        <TouchableOpacity style={styles.left}>
+        <TouchableOpacity style={styles.left} onPress={() => setDarkTheme(!darkTheme)}>
           <Text style={{ ...styles.text, color: "black" }}>
             <MaterialCommunityIcons name='theme-light-dark' size={24} color='#007FFF' />
           </Text>
@@ -31,7 +29,7 @@ const TopNavigation = ({ index, setIndex }) => {
       <Text style={{ ...styles.center, color: "white" }}>{index ? "All News" : "Discover"}</Text>
 
       {index ? (
-        <TouchableOpacity style={styles.right}>
+        <TouchableOpacity style={styles.right} onPress={() => fetchNews("general")}>
           <Text style={styles.text}>
             <AntDesign name='reload1' size={24} color='#007FFF' />
           </Text>

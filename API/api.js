@@ -14,7 +14,7 @@ export const categories = [
   {
     code: "",
     pic: "https://img.icons8.com/fluent/96/000000/movie-projector.png",
-    name: "entertainment",
+    name: "Events",
   },
   {
     pic: "https://img.icons8.com/fluent/96/000000/stethoscope.png",
@@ -30,7 +30,7 @@ export const categories = [
   },
   {
     pic: "https://img.icons8.com/fluent/96/000000/artificial-intelligence.png",
-    name: "technology",
+    name: "tech",
   },
 ];
 

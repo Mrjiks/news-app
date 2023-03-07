@@ -46,6 +46,7 @@ const Context = ({ children }) => {
         darkTheme,
         setDarkTheme,
         fetchNews,
+        category,
       }}>
       {children}
     </NewsContext.Provider>
